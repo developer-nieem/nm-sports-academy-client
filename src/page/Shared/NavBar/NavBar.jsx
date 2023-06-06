@@ -1,17 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
+import logo from "../../../assets/logo.png"
 const NavBar = () => {
   const ourMenu = (
     <>
       <li>
-        <NavLink >Item 1</NavLink>
+        <NavLink >Home</NavLink>
       </li>
       <li>
-      <NavLink>Item 1</NavLink>
+      <NavLink>Instructors</NavLink>
         
       </li>
       <li>
-      <NavLink>Item 1</NavLink>
+      <NavLink>Classes</NavLink>
+      </li>
+      <li>
+      <NavLink>Dashboard</NavLink>
       </li>
     </>
   );
@@ -45,7 +49,7 @@ const NavBar = () => {
 
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl"><img className="w-28" src={logo} alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -53,7 +57,9 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+            <img className="w-[40px] h-[44px]" src="https://cdn-icons-png.flaticon.com/512/666/666201.png" alt="" />
+          <Link to='/login' className="btn">Login</Link>
+          <Link className="btn">Log Out</Link>
         </div>
       </div>
     </div>
