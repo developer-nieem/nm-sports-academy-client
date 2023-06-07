@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
   const { registerUser, userProfile } = useContext(AuthContext);
@@ -151,6 +152,7 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <p className="text-center"><SocialLogin></SocialLogin></p>
             <p className="text-center py-3">
               You have already account?
               <Link className="underline" to="/login">

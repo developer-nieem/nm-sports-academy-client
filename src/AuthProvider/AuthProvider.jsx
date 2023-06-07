@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
-import {  createUserWithEmailAndPassword,  getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signOut, updateProfile } from "firebase/auth";
+import {  FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,  getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signInWithPopup,  signOut, updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
@@ -23,6 +23,12 @@ const AuthProvider = ({children}) => {
        })
     }
 
+    // social login 
+    const providerGl = new GoogleAuthProvider();
+
+    const glLogin =  () => {
+        return signInWithPopup(auth, providerGl)
+    }
      // Login user 
      const signInUser = (email,pass) =>{
         setLoading(true);
@@ -54,6 +60,7 @@ const AuthProvider = ({children}) => {
         loading,
         registerUser,
         userProfile,
+        glLogin,
         signInUser,
         logOut
     }

@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
+
+    const { signInUser} = useContext(AuthContext);
+
     const [showPass , setShowPass] =  useState(true)
     const { register, handleSubmit,  formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        signInUser(data.email, data.password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+           
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+    };
 
   
   return (
@@ -45,6 +60,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <p className="text-center"><SocialLogin></SocialLogin></p>
             <p className="text-center py-3"> You have no account? <Link className="underline" to='/register'> Register now </Link> </p>
           </div>
         </div>
