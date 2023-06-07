@@ -14,8 +14,8 @@ const Classes = () => {
     }, [])
 
     return (
-        <div className="p-10">
-            <h2 className="text-4xl text-center font-bold my-20">Popular Classes</h2>
+        <div className="p-10 ">
+            <h2 className="text-4xl text-center font-bold mb-8">Popular Classes</h2>
            <div className="grid md:grid-cols-3 gap-5 ">
            {
                 classes.map(classItem => <ClassItem classItem={classItem} key={classItem._id}></ClassItem>)

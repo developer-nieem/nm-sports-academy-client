@@ -4,6 +4,8 @@ import { FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import Swal from 'sweetalert2'
+
 
 const Register = () => {
   const { registerUser, userProfile } = useContext(AuthContext);
@@ -28,6 +30,30 @@ const Register = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
+         
+         
+          const usersInfo = { name: data.name, email: data.email };
+          fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(usersInfo),
+          })
+            .then((res) => res.json())
+            .then(data => {
+                if (data.insertedId) {               
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "User Create successful",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    })
+            }
+        })
+
+
           userProfile(data.name, data.photo)
             .then((result) => {
               const user = result.user;

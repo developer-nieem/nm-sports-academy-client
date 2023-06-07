@@ -1,12 +1,20 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
 
+    let navigate = useNavigate();
+    let location = useLocation();
+  
+   
     const { signInUser } = useContext(AuthContext);
+
+
+    const from = location?.state?.from?.pathname || '/';
+
 
     const [showPass , setShowPass] =  useState(true)
     const { register, handleSubmit,   } = useForm();
@@ -15,6 +23,7 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            navigate(from, { replace: true });
            
           })
           .catch((error) => {
