@@ -6,6 +6,9 @@ import Register from "../page/Profile/Register";
 import InstructorsPage from "../page/InstructorsPage/InstructorsPage";
 import Classes from "../page/Home/Classes/Classes";
 import ClassesPage from "../page/ClassesPage/ClassesPage";
+import DashBoard from "../Layout/DashBoard";
+import SelectedClasses from "../page/Dashboard/Students/SelectedClasses/SelectedClasses";
+import PrivateRoute from "./PrivateRoute";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -30,6 +33,20 @@ const Route =  createBrowserRouter([
                     {
                         path: '/classes',
                         element:<ClassesPage></ClassesPage>
+                    }
+                ]
+            },
+            {
+                path: 'dashboard',
+                element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+                children: [
+                    {
+                        path:'selected-classes',
+                        element: <SelectedClasses></SelectedClasses>
+                    },
+                    {
+                        path:'enrolled-classes',
+                        element: <SelectedClasses></SelectedClasses>
                     }
                 ]
             }

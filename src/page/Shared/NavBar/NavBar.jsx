@@ -18,9 +18,11 @@ const NavBar = () => {
       <li>
       <NavLink to='/classes'>Classes</NavLink>
       </li>
-      <li>
-      <NavLink>Dashboard</NavLink>
-      </li>
+     {
+        user &&  <li>
+        <NavLink to='dashboard'>Dashboard</NavLink>
+        </li>
+     }
     </>
   );
 

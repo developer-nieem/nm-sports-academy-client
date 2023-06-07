@@ -1,7 +1,26 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const ClassesPageItem = ({item}) => {
     const { name, image, instructor, available_seats, price, students } =
     item;
+
+    const {user} = useContext(AuthContext);
+    const navigate =  useNavigate();
+   
+    const [disabled , setDisabled] = useState(true)
+        
+    const isAdmin = false
+    const isInstructor = false
+
+   
+    const selectedCoursesHandler =  () => {
+        if(!user){
+           navigate('/login')
+        }
+      
+    }
     return (
         <div>
         <div className="card  bg-base-100 shadow-xl">
@@ -23,7 +42,7 @@ const ClassesPageItem = ({item}) => {
               <div className="badge badge-outline">students: {students}</div>
               <div className="badge badge-outline">price: ${price}</div>
             </div>
-            <button className="btn btn-secondary my-5">Select Courses</button>
+            <button onClick={selectedCoursesHandler}  disabled={available_seats <= 0 || isAdmin || isInstructor} className="btn btn-secondary my-5">Select Courses</button>
           </div>
         </div>
       </div>
