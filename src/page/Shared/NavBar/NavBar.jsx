@@ -1,7 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 
 import logo from "../../../assets/logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 const NavBar = () => {
+
+    const {user , logOut} =  useContext(AuthContext)
   const ourMenu = (
     <>
       <li>
@@ -20,6 +24,9 @@ const NavBar = () => {
     </>
   );
 
+  const logoutHandler = () => {
+    logOut().then(()=>{}).catch(error => console.log(error.message))
+  }
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -57,9 +64,11 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-            <img className="w-[40px] h-[44px]" src="https://cdn-icons-png.flaticon.com/512/666/666201.png" alt="" />
-          <Link to='/login' className="btn">Login</Link>
-          <Link className="btn">Log Out</Link>
+           {
+            user ? <><img className="w-[40px] h-[44px] rounded-full mx-3" src={`${ user? user?.photoURL : `"https://cdn-icons-png.flaticon.com/512/666/666201.png"`}`} alt="" /> <button onClick={logoutHandler} className="btn">Log Out</button></>    : <> 
+            <Link  to='/login' className="btn">Login</Link> 
+            </>
+           }
         </div>
       </div>
     </div>

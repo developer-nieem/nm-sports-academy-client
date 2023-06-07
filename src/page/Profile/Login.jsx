@@ -6,10 +6,10 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
 
-    const { signInUser} = useContext(AuthContext);
+    const { signInUser } = useContext(AuthContext);
 
     const [showPass , setShowPass] =  useState(true)
-    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const { register, handleSubmit,   } = useForm();
     const onSubmit = data => {
         signInUser(data.email, data.password)
         .then((result) => {

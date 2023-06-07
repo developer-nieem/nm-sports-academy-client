@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import {  FaGoogle } from "react-icons/fa";
 
 const SocialLogin = () => {
     const {glLogin} =  useContext(AuthContext)
