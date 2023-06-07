@@ -23,7 +23,7 @@ const ClassesPageItem = ({item}) => {
     }
     return (
         <div>
-        <div className="card  bg-base-100 shadow-xl">
+        <div className={`card   shadow-xl ${available_seats <= 0 && 'bg-red-600'}`}>
           <figure>
             <img
             className="h-[350px]"
