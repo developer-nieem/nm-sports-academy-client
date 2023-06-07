@@ -1,0 +1,95 @@
+[
+    {
+       
+        "name": "Football Training",
+        "instructor": "John Smith",
+        "available_seats": 20,
+        "price": 50,
+        "students": 40,
+        "image": "https://images.unsplash.com/photo-1527950285759-4d9f1b69c461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        
+        "name": "Basketball Camp",
+        "instructor": "Sarah Johnson",
+        "available_seats": 15,
+        "price": 75,
+        "students": 30,
+        "image": "https://images.unsplash.com/photo-1659468551117-8255d708e197?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        
+        "name": "Tennis Lessons",
+        "instructor": "Michael Thompson",
+        "available_seats": 10,
+        "price": 30,
+        "students": 50,
+        "image": "https://images.unsplash.com/photo-1516742720271-6ae39cbc5bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+    }
+    ,
+
+    {
+       
+        "name": "Swimming Classes",
+        "instructor": "Emily Davis",
+        "available_seats": 12,
+        "price": 40,
+        "students": 60,
+        "image": "https://plus.unsplash.com/premium_photo-1661780329046-a81896f05aec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        
+        "name": "Golf Clinic",
+        "instructor": "Robert Wilson",
+        "available_seats": 8,
+        "price": 60,
+        "students": 20,
+        "image": "https://images.unsplash.com/photo-1494249120761-ea1225b46c05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=713&q=80"
+    },
+
+    {
+      
+        "name": "Cricket Classes",
+        "instructor": "Alexandra Lee",
+        "available_seats": 18,
+        "price": 55,
+        "students": 35,
+        "image": "https://images.unsplash.com/photo-1593766729975-b40ae45191ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+    } 
+]
+
+
+,
+
+[
+    {
+        "image": "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "instructor": "John Smith",
+        "email": "johnsmith@gmail.com"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "instructor": "Sarah Johnson",
+        "email": "sarahjohnson@gmail.com"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80",
+        "instructor": "Michael Thompson",
+        "email": "michaelthompson@gmail.com"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+        "instructor": "Emily Davis",
+        "email": "emilydavis@gmail.com"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1555988482-7f61e883c2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+        "instructor": "Robert Wilson",
+        "email": "robertwilson@gmail.com"
+    },
+    {
+        "image": "https://cdn.wisden.com/wp-content/uploads/2019/04/GettyImages-1094984692-680x383.jpg",
+        "instructor": "Alexandra Lee",
+        "email": "alexandralee@gmail.com"
+    }
+]
