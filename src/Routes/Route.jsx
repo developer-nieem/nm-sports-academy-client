@@ -13,10 +13,12 @@ import StudentsUser from "../page/Dashboard/Students/StudentsUser/StudentsUser";
 import Payment from "../page/Dashboard/Students/Payment/Payment";
 import EnrolledClasses from "../page/Dashboard/Students/EnrolledClasses/EnrolledClasses";
 import PaymentHistory from "../page/Dashboard/Students/PaymentHistory/PaymentHistory";
+import ErrorPage from "../page/ErrorPage/ErrorPage";
 const Route =  createBrowserRouter([
             {
                 path: '/',
                 element: <Main></Main>,
+                errorElement: <ErrorPage></ErrorPage>,
                 children: [
                     {
                         path: '/',
@@ -43,6 +45,7 @@ const Route =  createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+                errorElement: <ErrorPage></ErrorPage>,
                 children: [
                     {
                         path:'/dashboard',
