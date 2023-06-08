@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import useUsers from "../../../../hooks/useUsers";
+
 import useSelectedClasses from "../../../../hooks/useSelectedClasses";
 
 const SelectedClasses = () => {
