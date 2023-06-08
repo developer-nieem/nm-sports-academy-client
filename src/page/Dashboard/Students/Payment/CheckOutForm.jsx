@@ -79,21 +79,11 @@ const handleSubmit = async (event) => {
         const transaction =  paymentIntent?.id
         setShowError(`Transaction Complete and  Your transaction ID :  ${transaction}`)
 
-        // const payment =  {
-        //     email : user.email,
-        //     transactionId : paymentIntent?.id,
-        //     price,
-        //     quantity: selectedClasses.length,
-        //     ItemsName : selectedClasses.map(item => item?.name),
-        //     ItemsId : selectedClasses.map(item => item?._id),
-        //     ItemsImage : selectedClasses.map(item => item?.image),
-        //     ItemsInstructor : selectedClasses.map(item => item?.instructor),
-        //     ItemsSeats : selectedClasses.map(item => item?.available_seats),
-
-        // }
+ 
         const payment =  {
           email: user.email,
           transactionId: paymentIntent?.id,
+          paymentDate: new Date(),
           price,
           quantity: selectedClasses.length,
           Items: selectedClasses.map(item => ({

@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
 
-import { FaFileUpload, FaHouseUser, FaSave, FaSchool, FaUser, FaUsers } from "react-icons/fa";
+import { FaDollarSign, FaFileUpload, FaHouseUser, FaSave, FaSchool, FaUser, FaUsers } from "react-icons/fa";
 
 
 
@@ -70,6 +70,9 @@ const DashBoard = () => {
                     </li>
                     <li>
                       <Link to="enrolled-classes"> <FaSave></FaSave> My Enrolled Classes</Link>
+                    </li>
+                    <li>
+                      <Link to="payment-history"> <FaDollarSign></FaDollarSign> Payment History</Link>
                     </li>
                   </>
                 )}
