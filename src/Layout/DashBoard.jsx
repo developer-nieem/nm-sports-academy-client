@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
 
-import { FaFileUpload, FaHouseUser, FaSave, FaSchool, FaUsers } from "react-icons/fa";
+import { FaFileUpload, FaHouseUser, FaSave, FaSchool, FaUser, FaUsers } from "react-icons/fa";
 
 
 
@@ -12,7 +12,7 @@ const DashBoard = () => {
     <div>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content p-10 items-center justify-center">
           {/* Page content here */}
 
           <Outlet></Outlet>
@@ -25,9 +25,12 @@ const DashBoard = () => {
             {userDetails?.admin ? (
               <>
                 <li>
-                  <Link to="/"> <FaHouseUser></FaHouseUser> Home</Link>
+                  <Link to="/"> <FaHouseUser></FaHouseUser> Back to Home</Link>
                 </li>
                 <div className="divider"></div> 
+                <li>
+                  <Link to="/dashboard"> <FaUser></FaUser> Admin Home</Link>
+                </li>
                 <li>
                   <Link to="selected-classes"> <FaSchool></FaSchool> Manage Classes</Link>
                 </li>
@@ -40,9 +43,12 @@ const DashBoard = () => {
                 {userDetails?.instructor ? (
                   <>
                     <li>
-                      <Link to="/"> <FaHouseUser></FaHouseUser>Home</Link>
+                      <Link to="/"> <FaHouseUser></FaHouseUser>Back to Home</Link>
                     </li>
                     <div className="divider"></div> 
+                    <li>
+                  <Link to="/dashboard"> <FaUser></FaUser> Instructor Home</Link>
+                </li>
                     <li>
                       <Link to="selected-classes"><FaFileUpload></FaFileUpload>  Add a Class</Link>
                     </li>
@@ -53,9 +59,12 @@ const DashBoard = () => {
                 ) : (
                   <>
                     <li>
-                      <Link to="/"><FaHouseUser></FaHouseUser>Home</Link>
+                      <Link to="/"><FaHouseUser></FaHouseUser>Back to Home</Link>
                     </li>
                     <div className="divider"></div> 
+                    <li>
+                  <Link to="/dashboard"> <FaUser></FaUser> User Home</Link>
+                </li>
                     <li>
                       <Link to="selected-classes"> <FaSchool></FaSchool> My Selected Classes</Link>
                     </li>
