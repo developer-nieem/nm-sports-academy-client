@@ -53,12 +53,13 @@ const Register = () => {
             }
         })
 
-
+        navigate("/");
+        
           userProfile(data.name, data.photo)
             .then((result) => {
               const user = result.user;
               console.log(user);
-              navigate("/");
+              
             })
             .catch((error) => {
               console.log(error.message);

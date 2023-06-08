@@ -4,6 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
 
     let navigate = useNavigate();
@@ -23,6 +24,13 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Login successful!",
+                showConfirmButton: false,
+                timer: 1500,
+              })
             navigate(from, { replace: true });
            
           })
