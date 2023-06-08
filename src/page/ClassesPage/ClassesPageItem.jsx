@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import {  useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import useUsers from "../../hooks/useUsers";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const ClassesPageItem = ({item}) => {
     const { name, image, instructor, available_seats, price, students } =
@@ -9,7 +11,7 @@ const ClassesPageItem = ({item}) => {
 
     const {user} = useContext(AuthContext);
     const navigate =  useNavigate();
-   
+    const location = useLocation();
     const[userDetails] = useUsers()
   
         
@@ -17,9 +19,47 @@ const ClassesPageItem = ({item}) => {
     const isInstructor =userDetails?.instructor
 
    
-    const selectedCoursesHandler =  () => {
-        if(!user){
-           navigate('/login')
+    const selectedCoursesHandler =  (item) => {
+        const selectedClass=  {selectedItemId : item._id , name, image, instructor, available_seats, price, students , email: user?.email}
+        console.log(selectedClass);
+        if(user){
+          fetch('http://localhost:3000/selected-classes', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(selectedClass)
+          })
+          .then(res => res.json())
+          .then(data => {
+            
+            if(data.insertedId){
+               
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Course Selected your Cart!  Please see the dashboard.',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            }
+        })
+
+        }else{
+
+            Swal.fire({
+                title: 'You need to login',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', {state: {from: location}})
+                }
+              })
+
         }
       
     }
@@ -44,7 +84,7 @@ const ClassesPageItem = ({item}) => {
               <div className="badge badge-outline">students: {students}</div>
               <div className="badge badge-outline">price: ${price}</div>
             </div>
-            <button onClick={selectedCoursesHandler}  disabled={available_seats <= 0 || isAdmin || isInstructor} className="btn btn-secondary my-5">Select Courses</button>
+            <button onClick={() => selectedCoursesHandler(item)}  disabled={available_seats <= 0 || isAdmin || isInstructor} className="btn btn-secondary my-5">Select Courses</button>
           </div>
         </div>
       </div>
