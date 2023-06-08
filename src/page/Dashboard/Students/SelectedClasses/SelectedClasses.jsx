@@ -2,6 +2,7 @@
 import Swal from "sweetalert2";
 
 import useSelectedClasses from "../../../../hooks/useSelectedClasses";
+import { Link } from "react-router-dom";
 
 const SelectedClasses = () => {
   // const [selectedClasses, setSelectedClasses] = useState([]);
@@ -53,7 +54,7 @@ const SelectedClasses = () => {
           <h2 className="text-2xl font-medium">Total Price : ${totalPrice}</h2>
         </div>
         <div>
-          <button className="btn btn-primary btn-sm">Pay</button>
+          <Link to='/dashboard/payment' className="btn btn-primary btn-sm">Pay</Link>
         </div>
       </div>
       <div className="overflow-x-auto">

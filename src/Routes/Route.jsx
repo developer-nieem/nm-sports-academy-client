@@ -10,6 +10,7 @@ import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../page/Dashboard/Students/SelectedClasses/SelectedClasses";
 import PrivateRoute from "./PrivateRoute";
 import StudentsUser from "../page/Dashboard/Students/StudentsUser/StudentsUser";
+import Payment from "../page/Dashboard/Students/Payment/Payment";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -52,6 +53,10 @@ const Route =  createBrowserRouter([
                     {
                         path:'enrolled-classes',
                         element: <SelectedClasses></SelectedClasses>
+                    },
+                    {
+                        path:'payment',
+                        element: <Payment></Payment>
                     }
                 ]
             }
