@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import useUsers from "../../hooks/useUsers";
 
 const ClassesPageItem = ({item}) => {
     const { name, image, instructor, available_seats, price, students } =
@@ -9,10 +10,11 @@ const ClassesPageItem = ({item}) => {
     const {user} = useContext(AuthContext);
     const navigate =  useNavigate();
    
-    const [disabled , setDisabled] = useState(true)
+    const[userDetails] = useUsers()
+  
         
-    const isAdmin = false
-    const isInstructor = false
+    const isAdmin = userDetails?.admin
+    const isInstructor =userDetails?.instructor
 
    
     const selectedCoursesHandler =  () => {

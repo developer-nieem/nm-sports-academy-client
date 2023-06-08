@@ -14,7 +14,7 @@ const useUsers = () => {
             console.log(data);
             setUserDetails(data)
         })
-    }, [])
+    }, [user])
 
     console.log(userDetails);
     return [userDetails]
