@@ -11,6 +11,7 @@ import SelectedClasses from "../page/Dashboard/Students/SelectedClasses/Selected
 import PrivateRoute from "./PrivateRoute";
 import StudentsUser from "../page/Dashboard/Students/StudentsUser/StudentsUser";
 import Payment from "../page/Dashboard/Students/Payment/Payment";
+import EnrolledClasses from "../page/Dashboard/Students/EnrolledClasses/EnrolledClasses";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -52,12 +53,13 @@ const Route =  createBrowserRouter([
                     },
                     {
                         path:'enrolled-classes',
-                        element: <SelectedClasses></SelectedClasses>
+                        element: <EnrolledClasses></EnrolledClasses>
                     },
                     {
                         path:'payment',
                         element: <Payment></Payment>
                     }
+                    
                 ]
             }
 ])

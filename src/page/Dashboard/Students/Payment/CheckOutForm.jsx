@@ -79,22 +79,47 @@ const handleSubmit = async (event) => {
         const transaction =  paymentIntent?.id
         setShowError(`Transaction Complete and  Your transaction ID :  ${transaction}`)
 
-        const payment =  {
-            email : user.email,
-            transactionId : paymentIntent?.id,
-            price,
-            quantity: selectedClasses.length,
-            ItemsName : selectedClasses.map(item => item?.name),
-            ItemsId : selectedClasses.map(item => item?._id),
-            ItemsImage : selectedClasses.map(item => item?.image),
-            ItemsInstructor : selectedClasses.map(item => item?.instructor),
-            ItemsSeats : selectedClasses.map(item => item?.available_seats),
+        // const payment =  {
+        //     email : user.email,
+        //     transactionId : paymentIntent?.id,
+        //     price,
+        //     quantity: selectedClasses.length,
+        //     ItemsName : selectedClasses.map(item => item?.name),
+        //     ItemsId : selectedClasses.map(item => item?._id),
+        //     ItemsImage : selectedClasses.map(item => item?.image),
+        //     ItemsInstructor : selectedClasses.map(item => item?.instructor),
+        //     ItemsSeats : selectedClasses.map(item => item?.available_seats),
 
-        }
+        // }
+        const payment =  {
+          email: user.email,
+          transactionId: paymentIntent?.id,
+          price,
+          quantity: selectedClasses.length,
+          Items: selectedClasses.map(item => ({
+            name: item?.name,
+            image: item?.image,
+            instructor: item?.instructor,
+            price: item?.price,
+            available_seats: item?.available_seats
+          }))
+        };
         axios.post('http://localhost:3000/payment',  payment )
     .then(res => {
     
         if (res.data.insertedId) {
+         
+          fetch(`http://localhost:3000/selected-classes-delete/${user?.email}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount > 0) {
+                 console.log('deleted all selected courses');
+              }
+            });
+
+
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
