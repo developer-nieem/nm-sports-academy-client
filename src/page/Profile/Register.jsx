@@ -87,8 +87,11 @@ const Register = () => {
                   type="name"
                   placeholder="Name"
                   className="input input-bordered"
-                  {...register("name")}
+                  {...register("name" , { required: true })}
                 />
+                {errors.name?.type === "required" && (
+                  <p role="alert">Name is required</p>
+                )}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -100,7 +103,7 @@ const Register = () => {
                   className="input input-bordered"
                   {...register("email", { required: true })}
                 />
-                {errors.password?.type === "email" && (
+                {errors.password?.type === "required" && (
                   <p role="alert">Email is required</p>
                 )}
               </div>
