@@ -16,6 +16,9 @@ import PaymentHistory from "../page/Dashboard/Students/PaymentHistory/PaymentHis
 import ErrorPage from "../page/ErrorPage/ErrorPage";
 import AddClass from "../page/Dashboard/Instructor/AddClass/AddClass";
 import MyClasses from "../page/Dashboard/Instructor/MyClasses/MyClasses";
+import ManageClasses from "../page/Dashboard/Admin/ManageClasses/ManageClasses";
+import ManageUsers from "../page/Dashboard/Admin/ManageUsers/ManageUsers";
+import FeedBack from "../page/Dashboard/Admin/FeedBack/FeedBack";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -77,6 +80,19 @@ const Route =  createBrowserRouter([
                     {
                         path:'my-classes',
                         element: <MyClasses></MyClasses>
+                    },
+                    // admin
+                    {
+                        path:'manage-classes',
+                        element: <ManageClasses></ManageClasses>
+                    },
+                    {
+                        path:'manage-users',
+                        element: <ManageUsers></ManageUsers>
+                    },
+                    {
+                        path:'feedback/:id',
+                        element: <FeedBack></FeedBack>
                     }
                 ]
             }

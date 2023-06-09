@@ -32,10 +32,10 @@ const DashBoard = () => {
                   <Link to="/dashboard"> <FaUser></FaUser> Admin Home</Link>
                 </li>
                 <li>
-                  <Link to="selected-classes"> <FaSchool></FaSchool> Manage Classes</Link>
+                  <Link to="manage-classes"> <FaSchool></FaSchool> Manage Classes</Link>
                 </li>
                 <li>
-                  <Link to="enrolled-classes"> <FaUsers></FaUsers> Manage Users</Link>
+                  <Link to="manage-users"> <FaUsers></FaUsers> Manage Users</Link>
                 </li>
               </>
             ) : (

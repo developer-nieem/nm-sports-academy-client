@@ -44,7 +44,7 @@ const MyClasses = () => {
                     </button>
                     
                     </td>
-                  <td>{item?.feedback}</td>
+                  <td>{item?.feedBack}</td>
                   <td>
                   <button
                    
