@@ -39,6 +39,7 @@ const ManageClasses = () => {
               <th>Available seats</th>
               <th>Price</th>
               <th>Status</th>
+              <th>Action Status</th>
               <th>Feedback </th>
              
             </tr>
@@ -62,6 +63,7 @@ const ManageClasses = () => {
                   <td >{item?.email}</td>
                   <td>{item?.available_seats}</td>
                   <td>${item.price}</td>
+                  <td><button className="btn btn-outline btn-xs">{item.status}</button></td>
                   <td>
                     <div className=" flex gap-2">
                         <button disabled={`${item.status === "denied" ? "disabled" :'' }`} onClick={() => handleStatusUpdate(item._id, "approved")} className="btn btn-primary btn-xs">Approved</button>
@@ -72,6 +74,7 @@ const ManageClasses = () => {
                 
                   <td>
                   <Link
+                  
                     to={`/dashboard/feedback/${item._id}`}
                     className="btn btn-neutral btn-xs"
                   >

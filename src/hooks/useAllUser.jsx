@@ -9,7 +9,7 @@ const useAllUser = () => {
     // const [userDetails , setUserDetails] = useState(null);
 
     const {refetch , data : allUserDetails = []} = useQuery({
-       
+       queryKey : ['users'], 
         queryFn : async () => {
             const res = await fetch(`http://localhost:3000/users`)
             return res.json()

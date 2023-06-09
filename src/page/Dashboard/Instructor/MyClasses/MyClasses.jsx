@@ -44,6 +44,7 @@ const MyClasses = () => {
                     </button>
                     
                     </td>
+                  {/* <td>{`${item.status == 'pending' || item.status == 'approved'} ? "" : ${item?.feedBack}`}</td> */}
                   <td>{item?.feedBack}</td>
                   <td>
                   <button
