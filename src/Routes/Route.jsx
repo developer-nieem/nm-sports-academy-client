@@ -14,6 +14,8 @@ import Payment from "../page/Dashboard/Students/Payment/Payment";
 import EnrolledClasses from "../page/Dashboard/Students/EnrolledClasses/EnrolledClasses";
 import PaymentHistory from "../page/Dashboard/Students/PaymentHistory/PaymentHistory";
 import ErrorPage from "../page/ErrorPage/ErrorPage";
+import AddClass from "../page/Dashboard/Instructor/AddClass/AddClass";
+import MyClasses from "../page/Dashboard/Instructor/MyClasses/MyClasses";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -66,8 +68,16 @@ const Route =  createBrowserRouter([
                     {
                         path:'payment-history',
                         element: <PaymentHistory></PaymentHistory>
+                    },
+                    // instructor 
+                    {
+                        path:'add-class',
+                        element: <AddClass></AddClass>
+                    },
+                    {
+                        path:'my-classes',
+                        element: <MyClasses></MyClasses>
                     }
-                    
                 ]
             }
 ])

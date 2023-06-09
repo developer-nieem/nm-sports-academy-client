@@ -50,10 +50,10 @@ const DashBoard = () => {
                   <Link to="/dashboard"> <FaUser></FaUser> Instructor Home</Link>
                 </li>
                     <li>
-                      <Link to="selected-classes"><FaFileUpload></FaFileUpload>  Add a Class</Link>
+                      <Link to="add-class"><FaFileUpload></FaFileUpload>  Add a Class</Link>
                     </li>
                     <li>
-                      <Link to="enrolled-classes"> <FaSchool></FaSchool> My Classes</Link>
+                      <Link to="my-classes"> <FaSchool></FaSchool> My Classes</Link>
                     </li>
                   </>
                 ) : (
