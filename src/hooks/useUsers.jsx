@@ -8,7 +8,7 @@ const useUsers = () => {
 
     // const [userDetails , setUserDetails] = useState(null);
 
-    const {refetch , data : userDetails = []} = useQuery({
+    const {refetch ,  data : userDetails = []} = useQuery({
         queryKey : ['admin', user?.email],
         queryFn : async () => {
             const res = await fetch(`http://localhost:3000/users/admin/${user?.email}`)
@@ -19,7 +19,7 @@ const useUsers = () => {
 
 
     console.log(userDetails);
-    return [userDetails , refetch]
+    return [userDetails , refetch ]
 };
 
 export default useUsers;
