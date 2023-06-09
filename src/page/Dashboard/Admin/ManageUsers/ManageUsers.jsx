@@ -32,7 +32,8 @@ const ManageUsers = () => {
              
               <th>Name</th>
               <th> Email</th>
-              <th> User role</th>
+              <th> Set User role</th>
+              <th>  UserRole</th>
               
              
             </tr>
@@ -53,7 +54,7 @@ const ManageUsers = () => {
                     </div>
                     </td>
                   
-                
+                    <td> <button className="btn btn-outline btn-xs">{user?.role ? user?.role : 'student'}</button></td>
                
                 </tr>
               

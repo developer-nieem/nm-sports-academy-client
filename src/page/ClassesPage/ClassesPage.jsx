@@ -6,7 +6,7 @@ const ClassesPage = () => {
     const [classes , setClasses] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/classes-page')
+        fetch('http://localhost:3000/approved-classes-page')
         .then(res => res.json())
         .then(data => {
             console.log(data);
