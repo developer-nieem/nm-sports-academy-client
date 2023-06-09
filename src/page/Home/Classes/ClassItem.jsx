@@ -1,3 +1,4 @@
+
 const ClassItem = ({ classItem }) => {
   console.log(classItem);
   const { name, image, instructor, available_seats, price, students } =
@@ -14,7 +15,8 @@ const ClassItem = ({ classItem }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">
-            {name}
+           {name} 
+            
             
           </h2>
           <p className="font-bold">Instructor Name: {instructor}</p>
