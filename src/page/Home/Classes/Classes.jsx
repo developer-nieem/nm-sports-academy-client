@@ -17,7 +17,7 @@ const Classes = () => {
         <div className="p-10 ">
             
             
-            <h2 className="text-4xl text-center font-bold mb-8"> <Fade delay={100} cascade damping={1e-1}>Popular Classes </Fade> </h2>
+            <h2 className="text-4xl text-center font-bold my-16"> <Fade delay={100} cascade damping={1e-1}>Popular Classes </Fade> </h2>
      
             
            <div className="grid md:grid-cols-3 gap-5 ">

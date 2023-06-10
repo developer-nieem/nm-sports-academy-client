@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div data-theme={`${theme}`}>
       <NavBar></NavBar>
-      <div className=" fixed top-96 z-10">
+      <div className=" fixed top-80 z-10">
         <div className="btn-group btn-group-vertical">
         <button onClick={() => setTheme("light")} className="btn">
             Light

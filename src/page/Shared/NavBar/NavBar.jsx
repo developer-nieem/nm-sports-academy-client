@@ -9,18 +9,18 @@ const NavBar = () => {
   const ourMenu = (
     <>
       <li>
-        <NavLink >Home</NavLink>
+        <NavLink to='/' className='text-xl'>Home</NavLink>
       </li>
       <li>
-      <NavLink to='/instructors'>Instructors</NavLink>
+      <NavLink to='/instructors' className='text-xl'>Instructors</NavLink>
         
       </li>
       <li>
-      <NavLink to='/classes'>Classes</NavLink>
+      <NavLink to='/classes' className='text-xl'>Classes</NavLink>
       </li>
      {
         user &&  <li>
-        <NavLink to='dashboard'>Dashboard</NavLink>
+        <NavLink to='dashboard' className='text-xl'>Dashboard</NavLink>
         </li>
      }
     </>
@@ -52,7 +52,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
             >
 {ourMenu}
 
