@@ -32,7 +32,7 @@ const Register = () => {
           console.log(user);
          
          
-          const usersInfo = { name: data.name, email: data.email };
+          const usersInfo = { name: data.name, email: data.email, image:data.photo };
           fetch("http://localhost:3000/users", {
             method: "POST",
             headers: {

@@ -20,6 +20,7 @@ import ManageUsers from "../page/Dashboard/Admin/ManageUsers/ManageUsers";
 import FeedBack from "../page/Dashboard/Admin/FeedBack/FeedBack";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import UsersRoute from "./UsersRoute";
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -59,19 +60,19 @@ const Route =  createBrowserRouter([
                     },
                     {
                         path:'selected-classes',
-                        element: <SelectedClasses></SelectedClasses>
+                        element: <UsersRoute><SelectedClasses></SelectedClasses></UsersRoute>
                     },
                     {
                         path:'enrolled-classes',
-                        element: <EnrolledClasses></EnrolledClasses>
+                        element: <UsersRoute><EnrolledClasses></EnrolledClasses></UsersRoute>
                     },
                     {
                         path:'payment',
-                        element: <Payment></Payment>
+                        element: <UsersRoute><Payment></Payment></UsersRoute>
                     },
                     {
                         path:'payment-history',
-                        element: <PaymentHistory></PaymentHistory>
+                        element: <UsersRoute><PaymentHistory></PaymentHistory></UsersRoute>
                     },
                     // instructor 
                     {
