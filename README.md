@@ -5,7 +5,7 @@
  * Also we have login and register system by firebase and user store on ## mongoDB
  
 
- ## most important feature : Students dashboard , Instructor dashboard , Admin Dashboard:
+ ## Most important feature : Students dashboard , Instructor dashboard , Admin Dashboard:
  
   * Students dashboard :  Have 3 item on students dashboard. 
     * my selected class : you can see all your selected class and you can pay with strip your selected classes
