@@ -27,5 +27,5 @@
   * Express JS , MongoDB, CORS , Dotenv
   * Hosted server on vercel 
 
-  ### Live link : []()
+  ### Live link : [https://nm-sports-academy.web.app/](https://nm-sports-academy.web.app/)
         
