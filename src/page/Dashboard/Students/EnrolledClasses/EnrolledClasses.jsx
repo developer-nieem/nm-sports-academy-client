@@ -8,7 +8,7 @@ const EnrolledClasses = () => {
         queryKey: ['enrolled-classes', user?.email],
         enabled: !!user?.email && !loading,
         queryFn : async () => {
-            const res = await fetch(`http://localhost:3000/enrolled-classes/${user?.email}`)
+            const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/enrolled-classes/${user?.email}`)
             return res.json()
         }
     })

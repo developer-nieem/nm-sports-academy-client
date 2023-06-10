@@ -13,7 +13,7 @@ const FeedBack = () => {
   } = useForm();
   const onSubmit = (data) => {
         const feedback =  data.feedback
-    fetch(`http://localhost:3000/feedback-classes/${id}`, {
+    fetch(`https://assignment12-server-developer-nieem.vercel.app/feedback-classes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

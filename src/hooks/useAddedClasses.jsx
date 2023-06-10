@@ -9,7 +9,7 @@ const useAddedClasses = () => {
         queryKey: ['instructor-classes', user?.email],
         enabled: !!user?.email && !loading,
         queryFn : async () => {
-            const res = await fetch(`http://localhost:3000/instructor-classes/${user?.email}`)
+            const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/instructor-classes/${user?.email}`)
             return res.json()
         }
     })

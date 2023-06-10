@@ -21,7 +21,7 @@
     * Manage Users : admin can make a user as instructor / admin 
 
 ## FRONT-END TECHNOLOGY : 
-  * TailwindCSS , Daisyui,  React js, firebase ,  react-router-dom , react-hook-form , Tanstack / react-query , axios, react-icons , sweetalert2 , stripe/react-stripe-js , lottie-react , react-responsive-carousel  etc.
+  * TailwindCSS , Daisyui,  React js, firebase ,  react-router-dom , react-hook-form , Tanstack / react-query , axios, react-icons , sweetalert2 , stripe/react-stripe-js , lottie-react , react-awesome-slider  etc.
 
 ## BACK-END TECHNOLOGY : 
   * Express JS , MongoDB, CORS , Dotenv

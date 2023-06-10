@@ -32,8 +32,8 @@ const Register = () => {
           console.log(user);
          
          
-          const usersInfo = { name: data.name, email: data.email, image:data.photo };
-          fetch("http://localhost:3000/users", {
+          const usersInfo = { name: data.name, email: data.email, image:data.photo, role:'student' };
+          fetch("https://assignment12-server-developer-nieem.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

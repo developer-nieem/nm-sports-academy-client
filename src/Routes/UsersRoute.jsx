@@ -7,15 +7,17 @@ import { useContext } from 'react';
 import useUsers from '../hooks/useUsers';
 const UsersRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
-    const [userDetails ] = useUsers();
+    const [userDetails , isLoading] = useUsers();
   const  location = useLocation();
-  if (loading) {
+
+ 
+  if (loading ) {
    return  <div className="text-center py-36">
      <Lottie animationData={loadingPage} loop={true} />
    </div>
   }
 
-  if (user && !userDetails?.instructor && !!userDetails?.admin) {
+  if (user ) {
     return children;
   }
   

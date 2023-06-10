@@ -10,7 +10,7 @@ const ManageClasses = () => {
 
     const handleStatusUpdate = (id, status) => {
         
-        fetch(`http://localhost:3000/classes/${id}`, {
+        fetch(`https://assignment12-server-developer-nieem.vercel.app/classes/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

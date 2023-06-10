@@ -23,7 +23,7 @@ const ClassesPageItem = ({item}) => {
         const selectedClass=  {selectedItemId : item._id , name, image, instructor, available_seats, price, students , email: user?.email}
         console.log(selectedClass);
         if(user){
-          fetch('http://localhost:3000/selected-classes', {
+          fetch('https://assignment12-server-developer-nieem.vercel.app/selected-classes', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

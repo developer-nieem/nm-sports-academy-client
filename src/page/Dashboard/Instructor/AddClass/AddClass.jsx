@@ -33,7 +33,7 @@ const AddClass = () => {
 
             console.log(newClass);
 
-            axios.post('http://localhost:3000/classes',  newClass )
+            axios.post('https://assignment12-server-developer-nieem.vercel.app/classes',  newClass )
     .then(res => {
     
         if (res.data.insertedId) {

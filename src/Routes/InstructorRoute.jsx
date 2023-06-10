@@ -7,10 +7,10 @@ import loadingPage from "../../public/loading.json";
 
 const InstructorRoute = ({children}) => {
     const {user , loading} =  useContext(AuthContext);
-    const [userDetails ] = useUsers();
+    const [userDetails, isLoading ] = useUsers();
     const location = useLocation();
 
-    if (loading ) {
+    if (loading) {
             return  <div className="text-center py-36">
             <Lottie animationData={loadingPage} loop={true} />
           </div>
@@ -20,7 +20,7 @@ const InstructorRoute = ({children}) => {
         return children;
     }
 
-    return  <Navigate to="/" state={{from: location}} replace></Navigate>
+    return  <Navigate to="/dashboard" state={{from: location}} replace></Navigate>
 };
 
 export default InstructorRoute;

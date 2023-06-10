@@ -16,7 +16,7 @@ const [processing, setProcessing] = useState(false);
 
 useEffect(() => {
            
-    axios.post('http://localhost:3000/create-payment-intent', { price })
+    axios.post('https://assignment12-server-developer-nieem.vercel.app/create-payment-intent', { price })
     .then(res => {
     
         setClientSecret(res.data.clientSecret);
@@ -94,12 +94,12 @@ const handleSubmit = async (event) => {
             available_seats: item?.available_seats
           }))
         };
-        axios.post('http://localhost:3000/payment',  payment )
+        axios.post('https://assignment12-server-developer-nieem.vercel.app/payment',  payment )
     .then(res => {
     
         if (res.data.insertedId) {
          
-          fetch(`http://localhost:3000/selected-classes-delete/${user?.email}`, {
+          fetch(`https://assignment12-server-developer-nieem.vercel.app/selected-classes-delete/${user?.email}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

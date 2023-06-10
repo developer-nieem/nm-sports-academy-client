@@ -9,7 +9,7 @@ const SelectedClasses = () => {
     const [selectedClasses ,refetch] =  useSelectedClasses();
 
   // useEffect(() => {
-  //   fetch("http://localhost:3000/selected-classes")
+  //   fetch("https://assignment12-server-developer-nieem.vercel.app/selected-classes")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setSelectedClasses(data);
@@ -29,7 +29,7 @@ const SelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/selected-classes/${id}`, {
+        fetch(`https://assignment12-server-developer-nieem.vercel.app/selected-classes/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
 import {   GoogleAuthProvider, createUserWithEmailAndPassword,  getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signInWithPopup,  signOut, updateProfile } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -41,6 +42,16 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe =   onAuthStateChanged(auth, (loggedUser) =>{
               setUser(loggedUser);
+              if(loggedUser){
+                axios.post('https://assignment12-server-developer-nieem.vercel.app/jwt', {email: loggedUser.email})
+                .then(data => {
+                    console.log(data.data.token);
+                    localStorage.setItem('access-tk' , data.data.token);
+                    setLoading(false);
+                })
+              }else{
+                localStorage.removeItem('access-tk');
+              }
               setLoading(false);
       })
       return () =>{

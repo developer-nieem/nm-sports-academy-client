@@ -11,7 +11,7 @@ const useAllUser = () => {
     const {refetch , data : allUserDetails = []} = useQuery({
        queryKey : ['users'], 
         queryFn : async () => {
-            const res = await fetch(`http://localhost:3000/users`)
+            const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/users`)
             return res.json()
         }
     })

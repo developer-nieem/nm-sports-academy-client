@@ -4,7 +4,7 @@ const useManageClasses = () => {
   const { refetch, data: manageClasses = [] } = useQuery({
     queryKey: ["classes-page"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:3000/classes-page`);
+      const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/classes-page`);
       return res.json();
     },
   });

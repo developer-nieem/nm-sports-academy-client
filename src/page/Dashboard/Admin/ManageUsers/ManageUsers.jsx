@@ -8,7 +8,7 @@ const ManageUsers = () => {
 
     const handleUserRoleUpdate = (id , role) => {
 
-        fetch(`http://localhost:3000/admin/users/${id}` , {
+        fetch(`https://assignment12-server-developer-nieem.vercel.app/admin/users/${id}` , {
             method: 'PATCH',
             headers:{
                 'content-type' : 'application/json'

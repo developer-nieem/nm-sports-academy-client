@@ -14,9 +14,9 @@ const SocialLogin = () => {
             // console.log(user);
 
 
-            const usersInfo = { name: user.displayName, email: user.email, image:user.photoURL };
+            const usersInfo = { name: user.displayName, email: user.email, image:user.photoURL, role:'student' };
             console.log(usersInfo);
-            fetch("http://localhost:3000/users", {
+            fetch("https://assignment12-server-developer-nieem.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

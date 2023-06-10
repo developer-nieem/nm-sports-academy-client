@@ -9,7 +9,7 @@ const PaymentHistory = () => {
         queryKey: ['payment', user?.email],
         enabled: !!user?.email && !loading,
         queryFn : async () => {
-            const res = await fetch(`http://localhost:3000/payment/${user?.email}`)
+            const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/payment/${user?.email}`)
             return res.json()
         }
     })

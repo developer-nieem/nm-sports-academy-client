@@ -6,7 +6,7 @@ const InstructorsPage = () => {
     const [instructors , setInstructors] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/all-instructor')
+        fetch('https://assignment12-server-developer-nieem.vercel.app/all-instructor')
         .then(res => res.json())
         .then(data => {
             console.log(data);
