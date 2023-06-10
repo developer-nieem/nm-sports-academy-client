@@ -10,15 +10,16 @@ const Main = () => {
       <NavBar></NavBar>
       <div className=" fixed top-96 z-10">
         <div className="btn-group btn-group-vertical">
+        <button onClick={() => setTheme("light")} className="btn">
+            Light
+          </button>
           <button
             onClick={() => setTheme("dark")}
             className="btn bg-black hover:bg-black text-white"
           >
             Dark
           </button>
-          <button onClick={() => setTheme("light")} className="btn">
-            Light
-          </button>
+          
         </div>
       </div>
       <Outlet></Outlet>
