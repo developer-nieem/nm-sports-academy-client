@@ -4,12 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 
 const useUsers = () => {
 
-    const {user } =  useContext(AuthContext)
+    const {user, loading } =  useContext(AuthContext)
 
     // const token = localStorage.getItem('access-tk')
 
     const {refetch ,   data : userDetails = [], isLoading} = useQuery({
         queryKey : ['admin', user?.email],
+        enabled: !!user?.email && !loading ,
         queryFn : async () => {
             const res = await fetch(`https://assignment12-server-developer-nieem.vercel.app/users/admin/${user?.email}`)
             return res.json()
