@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import useAllUser from "../../../../hooks/useAllUser";
 
 
@@ -24,6 +25,11 @@ const ManageUsers = () => {
     }
     return (
         <div>
+          <Helmet>
+        <title>
+          Manage Users - Elevate Your Game with Expert Coaching and Training
+        </title>
+      </Helmet>
              <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

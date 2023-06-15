@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
 
 import { FaDollarSign, FaFileUpload, FaHouseUser, FaSave, FaSchool, FaUser, FaUsers } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 
@@ -10,6 +11,9 @@ const DashBoard = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard - Elevate Your Game with Expert Coaching and Training</title>
+      </Helmet>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content p-10 items-center justify-center">

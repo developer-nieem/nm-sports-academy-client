@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -8,7 +9,6 @@ const FeedBack = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -37,6 +37,11 @@ const FeedBack = () => {
   };
   return (
     <div className="text-center">
+      <Helmet>
+        <title>
+          Feedback - Elevate Your Game with Expert Coaching and Training
+        </title>
+      </Helmet>
       <form  onSubmit={handleSubmit(onSubmit)}>
        
         <textarea {...register("feedback")} placeholder="Feedback" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>

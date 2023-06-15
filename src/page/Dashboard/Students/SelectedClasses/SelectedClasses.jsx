@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 import useSelectedClasses from "../../../../hooks/useSelectedClasses";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const SelectedClasses = () => {
   // const [selectedClasses, setSelectedClasses] = useState([]);
@@ -44,6 +45,9 @@ const SelectedClasses = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Selected Classes - Elevate Your Game with Expert Coaching and Training</title>
+      </Helmet>
       <div className="flex justify-between my-5">
         <div>
           <h2 className="text-2xl font-medium">

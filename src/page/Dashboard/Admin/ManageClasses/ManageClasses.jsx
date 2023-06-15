@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAddedClasses from "../../../../hooks/useAddedClasses";
 import useManageClasses from "../../../../hooks/useManageClasses";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ManageClasses = () => {
    
@@ -27,6 +28,11 @@ const ManageClasses = () => {
 
     return (
         <div>
+          <Helmet>
+        <title>
+          Manage classes - Elevate Your Game with Expert Coaching and Training
+        </title>
+      </Helmet>
               <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

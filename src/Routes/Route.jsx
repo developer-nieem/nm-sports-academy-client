@@ -21,6 +21,8 @@ import FeedBack from "../page/Dashboard/Admin/FeedBack/FeedBack";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import UsersRoute from "./UsersRoute";
+import ProfileRoute from "./ProfileRoute";
+
 const Route =  createBrowserRouter([
             {
                 path: '/',
@@ -33,11 +35,11 @@ const Route =  createBrowserRouter([
                     },
                     {
                         path: '/login',
-                        element: <Login></Login>
+                        element: <ProfileRoute><Login></Login></ProfileRoute>
                     },
                     {
                         path: '/register',
-                        element: <Register></Register>
+                        element: <ProfileRoute> <Register></Register></ProfileRoute>
                     },
                     {
                         path: '/instructors',

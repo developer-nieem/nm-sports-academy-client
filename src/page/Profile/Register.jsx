@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -72,6 +73,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Register - Elevate Your Game with Expert Coaching and Training</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content md:w-6/12 flex-col ">
           <div className="text-center lg:text-left">

@@ -1,13 +1,18 @@
+import { Helmet } from "react-helmet";
 import useAddedClasses from "../../../../hooks/useAddedClasses";
 
 const MyClasses = () => {
+  const [addedClasses] = useAddedClasses();
+  console.log(addedClasses);
 
-    const [addedClasses] = useAddedClasses();
-    console.log(addedClasses);
-
-    return (
-        <div>
-             <div className="overflow-x-auto">
+  return (
+    <div>
+      <Helmet>
+        <title>
+          My Classes - Elevate Your Game with Expert Coaching and Training
+        </title>
+      </Helmet>
+      <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
@@ -22,46 +27,37 @@ const MyClasses = () => {
             </tr>
           </thead>
           <tbody>
-          {addedClasses.map((item) => (
-              
-                <tr key={item._id}>
-                  <td>
+            {addedClasses.map((item) => (
+              <tr key={item._id}>
+                <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                      <img src={item.image} alt={item.name} />
+                        <img src={item.image} alt={item.name} />
                       </div>
                     </div>
                   </div>
-                    
-                  </td>
-                  <td>{item.name}</td>
-                  <td>${item.price}</td>
-                  <td>{item.students}</td>
-                  <td >
-                    <button className="btn btn-success btn-xs">
+                </td>
+                <td>{item.name}</td>
+                <td>${item.price}</td>
+                <td>{item.students}</td>
+                <td>
+                  <button className="btn btn-success btn-xs">
                     {item.status}
-                    </button>
-                    
-                    </td>
-                  {/* <td>{`${item.status == 'pending' || item.status == 'approved'} ? "" : ${item?.feedBack}`}</td> */}
-                  <td>{item?.feedBack}</td>
-                  <td>
-                  <button
-                   
-                    className="btn btn-error btn-xs"
-                  >
-                    Update
                   </button>
-                  </td>
-                </tr>
-              
+                </td>
+                {/* <td>{`${item.status == 'pending' || item.status == 'approved'} ? "" : ${item?.feedBack}`}</td> */}
+                <td>{item?.feedBack}</td>
+                <td>
+                  <button className="btn btn-error btn-xs">Update</button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default MyClasses;

@@ -7,10 +7,10 @@ import loadingPage from "../../public/loading.json";
 
 const InstructorRoute = ({children}) => {
     const {user , loading} =  useContext(AuthContext);
-    const [userDetails, isLoading ] = useUsers();
+    const [userDetails,, isLoading ] = useUsers();
     const location = useLocation();
 
-    if (loading) {
+    if (loading || isLoading) {
             return  <div className="text-center py-36">
             <Lottie animationData={loadingPage} loop={true} />
           </div>
