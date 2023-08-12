@@ -7,6 +7,6 @@ export default {
   
   themes: ["light", "dark"],
 
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui") , require('tailwind-bootstrap-grid')()],
 }
 
