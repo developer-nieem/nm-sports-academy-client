@@ -1,8 +1,13 @@
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../../public/cricket.json";
-import { Fade } from "react-awesome-reveal";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from "react";
 
 const ComingMatch = () => {
+  useEffect(() => {
+    AOS.init();
+},[])
   return (
     <div className="p-10">
     
@@ -10,7 +15,7 @@ const ComingMatch = () => {
         <div className="   space-y-3">
 
       <div className="md:w-96 m-auto">
-      <Lottie animationData={groovyWalkAnimation} loop={true} />
+      <Lottie  data-aos="zoom-in-right" animationData={groovyWalkAnimation} loop={true} />
 
       </div>
        

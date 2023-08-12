@@ -4,6 +4,7 @@ import ComingMatch from "../ComingMatch";
 import Instructors from "../Instructors/Instructors";
 import { Helmet } from "react-helmet";
 import JoinTeam from "../JoinTeam";
+import Subscribe from "../Subscribe";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Instructors></Instructors>
       <ComingMatch></ComingMatch>
       <JoinTeam></JoinTeam>
+      <Subscribe></Subscribe>
     </div>
   );
 };
