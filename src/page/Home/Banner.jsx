@@ -1,21 +1,80 @@
-import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import withAutoplay from "react-awesome-slider/dist/autoplay";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import "./style.css"
+
+//  import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
 
 const Banner = () => {
-  const AutoplaySlider = withAutoplay(AwesomeSlider);
+
   return (
     <div>
-      <AutoplaySlider
-        play={true}
-        cancelOnInteraction={false} // should stop playing on user interaction
-        interval={5000}
+<Swiper
+        pagination={{
+          type: 'progressbar',
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
       >
-        <div data-src="https://i.ibb.co/cwLFdS4/1.jpg" />
-        <div data-src="https://i.ibb.co/8zC3GVX/4.jpg" />
-        <div data-src="https://i.ibb.co/zFs0sBL/2.jpg" />
-        <div data-src="https://i.ibb.co/hmzvckQ/3.jpg'" />
-      </AutoplaySlider>
+        <SwiperSlide>
+          <div className="relative">
+            <img src="https://i.ibb.co/cwLFdS4/1.jpg" alt="slide1" />
+
+            <div className="absolute bottom-[30%] left-0 right-0 z-10">
+              <button className=" btn btn-primary shadow-2xl  custom-btn text-lg text-white w-56">Learn More</button>
+              
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative">
+            <img src="https://i.ibb.co/8zC3GVX/4.jpg" alt="slide1" />
+
+            <div className="absolute bottom-[30%] left-0 right-0 z-10">
+              <button className=" btn btn-primary shadow-2xl  custom-btn text-lg text-white w-56">Learn More</button>
+              
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative">
+            <img src="https://i.ibb.co/zFs0sBL/2.jpg" alt="slide1" />
+
+            <div className="absolute bottom-[30%] left-0 right-0 z-10">
+              <button className=" btn btn-primary shadow-2xl  custom-btn text-lg text-white w-56">Learn More</button>
+              
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative">
+            <img src="https://i.ibb.co/hmzvckQ/3.jpg'" alt="slide1" />
+
+            <div className="absolute bottom-[30%] left-0 right-0 z-10">
+              <button className=" btn btn-primary shadow-2xl  custom-btn text-lg text-white w-56">Learn More</button>
+              
+            </div>
+          </div>
+        </SwiperSlide>
+        
+      </Swiper>
+
+
+
     </div>
   );
 };
