@@ -16,7 +16,7 @@ const Instructors = () => {
     }, [])
 
     return (
-        <div className="p-10">
+        <div className="p-10 pb-14 bg-[#EDF5EF]">
             <h2 className="text-4xl text-center font-bold my-20"> <Fade delay={100} cascade damping={1e-1}>Popular Instructors</Fade>  </h2>
            <div className="grid md:grid-cols-3 gap-5 ">
            {

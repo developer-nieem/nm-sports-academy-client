@@ -14,7 +14,7 @@ const Classes = () => {
     }, [])
 
     return (
-        <div className="p-10 ">
+        <div className="p-10 bg-[#EDF5EF]">
             
             
             <h2 className="text-4xl text-center font-bold my-16"> <Fade delay={100} cascade damping={1e-1}>Popular Classes </Fade> </h2>
