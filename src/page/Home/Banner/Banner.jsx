@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import "./style.css"
+import "./banner.css"
 
 //  import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
