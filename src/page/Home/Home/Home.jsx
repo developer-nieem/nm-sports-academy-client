@@ -7,6 +7,8 @@ import JoinTeam from "../JoinTeam";
 import Subscribe from "../Subscribe";
 import Testimonial from "../Testimonial/Testimonial";
 
+import FaqSection from "../Faq/Faq";
+
 const Home = () => {
   return (
     <div>
@@ -20,6 +22,7 @@ const Home = () => {
       <ComingMatch></ComingMatch>
       <JoinTeam></JoinTeam>
       <Testimonial></Testimonial>
+     <FaqSection></FaqSection>
       {/* <Subscribe></Subscribe> */}
     </div>
   );
