@@ -3,6 +3,7 @@
  *  Home page has 4 section like Slider , Popular Classes, Popular Instructors,  Feature 
  * Have an instructor and classes page, you can see all instructors and all approved classes by admin 
  * Also we have a login and register system by Firebase and user store on ## MongoDB
+ * Incorporated a professional Google Maps integration using React Leaflet and implemented a Contact Form powered by EmailJS on the homepage's Contact section.
  
 
  ## Most important feature: Students dashboard, Instructor dashboard, Admin Dashboard:

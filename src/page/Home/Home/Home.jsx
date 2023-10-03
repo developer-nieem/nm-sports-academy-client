@@ -8,6 +8,7 @@ import Subscribe from "../Subscribe";
 import Testimonial from "../Testimonial/Testimonial";
 
 import FaqSection from "../Faq/Faq";
+import Contacts from "../Contacts/Contacts";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <JoinTeam></JoinTeam>
       <Testimonial></Testimonial>
      <FaqSection></FaqSection>
+     <Contacts></Contacts>
       {/* <Subscribe></Subscribe> */}
     </div>
   );
