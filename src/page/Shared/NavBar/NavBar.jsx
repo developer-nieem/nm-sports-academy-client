@@ -1,37 +1,50 @@
 import { Link, NavLink } from "react-router-dom";
 
-import logo from "../../../assets/logo.png"
+import logo from "../../../assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-const NavBar = () => {
+import DarkModeToggle from "react-dark-mode-toggle";
 
-    const {user , logOut} =  useContext(AuthContext)
+const NavBar = ({ toggleTheme, isDarkMode }) => {
+ 
+ 
+  const { user, logOut } = useContext(AuthContext);
 
-    console.log(user);
+ 
 
   const ourMenu = (
     <>
       <li>
-        <NavLink to='/' className='text-xl'>Home</NavLink>
+        <NavLink to="/" className="text-xl">
+          Home
+        </NavLink>
       </li>
       <li>
-      <NavLink to='/instructors' className='text-xl'>Instructors</NavLink>
-        
+        <NavLink to="/instructors" className="text-xl">
+          Instructors
+        </NavLink>
       </li>
       <li>
-      <NavLink to='/classes' className='text-xl'>Classes</NavLink>
+        <NavLink to="/classes" className="text-xl">
+          Classes
+        </NavLink>
       </li>
-     {
-        user &&  <li>
-        <NavLink to='dashboard' className='text-xl'>Dashboard</NavLink>
+      {user && (
+        <li>
+          <NavLink to="dashboard" className="text-xl">
+            Dashboard
+          </NavLink>
         </li>
-     }
+      )}
     </>
   );
 
   const logoutHandler = () => {
-    logOut().then(()=>{}).catch(error => console.log(error.message))
-  }
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -57,23 +70,49 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
             >
-{ourMenu}
-
+              {ourMenu}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl"><img className="w-28" src={logo} alt="" /></a>
+          <a className="btn btn-ghost normal-case text-xl">
+            <img className="w-28" src={logo} alt="" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-          {ourMenu}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{ourMenu}</ul>
         </div>
-        <div className="navbar-end">
-           {
-            user ? <><img className="w-[40px] h-[44px] rounded-full mx-3" src={`${ user? user?.photoURL : `"https://cdn-icons-png.flaticon.com/512/666/666201.png"`}`} alt="" /> <button onClick={logoutHandler} className="btn">Log Out</button></>    : <> 
-            <Link  to='/login' className="btn">Login</Link> 
+        <div className="navbar-end space-x-4">
+         
+          {/* Dark and light mode */}
+          <DarkModeToggle
+            onChange={toggleTheme}
+            checked={isDarkMode}
+            size={80}
+          />
+
+          {/* Login button and profile  */}
+
+          {user ? (
+            <>
+              <img
+                className="w-[40px] h-[44px] rounded-full mx-3"
+                src={`${
+                  user
+                    ? user?.photoURL
+                    : `"https://cdn-icons-png.flaticon.com/512/666/666201.png"`
+                }`}
+                alt=""
+              />{" "}
+              <button onClick={logoutHandler} className="btn">
+                Log Out
+              </button>
             </>
-           }
+          ) : (
+            <>
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
