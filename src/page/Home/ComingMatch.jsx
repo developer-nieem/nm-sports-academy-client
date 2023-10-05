@@ -24,7 +24,7 @@ const ComingMatch = () => {
           <div  >
             <div >
               <h4 className="text-orange-400">We are the best * -----</h4>
-            <h1 className="text-5xl font-bold"> Match ot the  year is coming  </h1>
+            <h1 className="text-5xl font-bold"> Match of the  year is coming  </h1>
             <p className="py-6">
             Next Class Running is a dynamic and engaging running program designed for individuals of all fitness levels who are passionate about running or looking to improve their running skills. Led by experienced coaches, Next Class Running offersa supportive and motivating environment where participants can enhance their running technique, build endurance, and achieve their personal fitness goals.
             </p>

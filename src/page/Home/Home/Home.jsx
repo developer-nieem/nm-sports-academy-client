@@ -9,6 +9,7 @@ import Testimonial from "../Testimonial/Testimonial";
 
 import FaqSection from "../Faq/Faq";
 import Contacts from "../Contacts/Contacts";
+import Popup from "../../../components/Popup";
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <Classes></Classes>
-
+<Popup></Popup>
       <Instructors></Instructors>
       <ComingMatch></ComingMatch>
       <JoinTeam></JoinTeam>
