@@ -29,6 +29,11 @@ const NavBar = ({ toggleTheme, isDarkMode }) => {
           Classes
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/shop" className="text-xl">
+          Shop
+        </NavLink>
+      </li>
       {user && (
         <li>
           <NavLink to="dashboard" className="text-xl">
@@ -36,6 +41,20 @@ const NavBar = ({ toggleTheme, isDarkMode }) => {
           </NavLink>
         </li>
       )}
+
+      <li>
+         
+         <div className="sm:hidden">
+      {/* Dark and light mode */}
+          <DarkModeToggle
+            onChange={toggleTheme}
+            checked={isDarkMode}
+            size={80}
+          />
+         </div>
+         
+         
+      </li>
     </>
   );
 
@@ -82,12 +101,16 @@ const NavBar = ({ toggleTheme, isDarkMode }) => {
         </div>
         <div className="navbar-end space-x-4">
          
-          {/* Dark and light mode */}
-          <DarkModeToggle
+            {/* Dark and light mode */}
+           <div >
+           <DarkModeToggle
+            className="hidden sm:block"
             onChange={toggleTheme}
             checked={isDarkMode}
             size={80}
           />
+           </div>
+         
 
           {/* Login button and profile  */}
 

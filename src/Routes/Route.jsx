@@ -22,6 +22,7 @@ import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import UsersRoute from "./UsersRoute";
 import ProfileRoute from "./ProfileRoute";
+import Shop from "../page/shop/Shop";
 
 const Route =  createBrowserRouter([
             {
@@ -48,6 +49,10 @@ const Route =  createBrowserRouter([
                     {
                         path: '/classes',
                         element:<ClassesPage></ClassesPage>
+                    },
+                    {
+                        path: '/shop',
+                        element:<Shop></Shop>
                     }
                 ]
             },

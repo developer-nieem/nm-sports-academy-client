@@ -1,0 +1,7 @@
+.shop-banner{
+    background-image: url(https://images.unsplash.com/photo-1508176523-817e4d13f21e);
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.589);
+}
